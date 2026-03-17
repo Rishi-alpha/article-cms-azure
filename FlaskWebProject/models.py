@@ -60,10 +60,10 @@ class Post(db.Model):
             filename = Randomfilename + '.' + fileextension;
             try:
                 container_client.upload_blob(name=filename, data=file, overwrite=True)
-                if(self.image_path):
+                if self.image_path:
                     container_client.delete_blob(self.image_path)
             except Exception as e:
-                flash(str(e))
+                print("BLOB ERROR:", e)
             self.image_path =  filename
         if new:
             db.session.add(self)
