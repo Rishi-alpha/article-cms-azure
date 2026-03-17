@@ -1,2 +1,2 @@
 #!/bin/bash
-gunicorn --bind=0.0.0.0:$PORT application:app
+gunicorn --bind=0.0.0.0:$PORT FlaskWebProject:app
