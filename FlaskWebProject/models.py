@@ -61,7 +61,7 @@ class Post(db.Model):
             try:
                 container_client.upload_blob(name=filename, data=file, overwrite=True)
                 if(self.image_path):
-                    container_client.delete_blob(self.image_path)
+                    container_client.delete_blob(...)
             except Exception:
                 flash(Exception)
             self.image_path =  filename
